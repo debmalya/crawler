@@ -4,6 +4,8 @@
 package crawler;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -15,6 +17,15 @@ import org.jsoup.select.Elements;
  *
  */
 public class URLCrawler {
+	/**
+	 * To maintain list of links.
+	 */
+	private static Set<String> linkSet = new HashSet<String>();
+	
+	/**
+	 * To maintain list of links already parsed.
+	 */
+	private static Set<String> parsedLinkSet = new HashSet<String>();
 
 	/**
 	 * @param args
@@ -57,6 +68,7 @@ public class URLCrawler {
 		Elements links = bodyElement.select("a[href]");
 		for (Element link:links) {
 			System.out.println(link.attr("href"));
+			linkSet.add(link.attr("href"));
 		}
 		
 	}
