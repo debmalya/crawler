@@ -4,6 +4,7 @@
 package crawler;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -31,6 +32,16 @@ public class JavaGurus {
 			e.printStackTrace();
 		}
 
+		
+	}
+	
+	/**
+	 * 
+	 * @param document complete document
+	 * @return
+	 */
+	public Elements getAllElements(Document document) {
+		return document.getElementsByTag("a");
 	}
 
 }
