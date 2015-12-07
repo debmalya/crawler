@@ -37,6 +37,8 @@ public class JavaGurus {
 					System.out.println(element.ownText());
 				} else {					
 					isRepeated = true;
+//					/html/body/p[2]/table/tbody/tr[2]/td/p[2]
+//					what text comes after this is about java guru.
 				}
 			}
 		} catch (IOException e) {
