@@ -39,6 +39,8 @@ public class JavaGurus {
 					isRepeated = true;
 //					/html/body/p[2]/table/tbody/tr[2]/td/p[2]
 //					what text comes after this is about java guru.
+//					Repeated - here will come the details of guru.
+//					Get the details.
 				}
 			}
 		} catch (IOException e) {
