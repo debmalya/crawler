@@ -4,7 +4,9 @@
 package crawler;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.jsoup.Jsoup;
@@ -18,7 +20,15 @@ import org.jsoup.select.Elements;
  */
 public class JavaGurus {
 
+	/**
+	 * Set of java gurus.
+	 */
 	private static Set<String> gurus = new HashSet<>();
+	
+	/**
+	 * Key is the person name, value is their achievements.
+	 */
+	private static Map<String,String> aboutThem = new HashMap<String,String>();
 
 	/**
 	 * @param args
@@ -35,6 +45,7 @@ public class JavaGurus {
 				
 				if (gurus.add(element.ownText()) && !isRepeated) {					
 					System.out.println(element.ownText());
+					System.out.println(element.outerHtml());
 				} else {					
 					isRepeated = true;
 //					/html/body/p[2]/table/tbody/tr[2]/td/p[2]
