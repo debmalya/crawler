@@ -46,6 +46,7 @@ public class JavaGurus {
 				if (gurus.add(element.ownText()) && !isRepeated) {					
 					System.out.println(element.ownText());
 					System.out.println(element.outerHtml());
+					aboutThem.put(element.ownText(), null);
 				} else {					
 					isRepeated = true;
 //					/html/body/p[2]/table/tbody/tr[2]/td/p[2]
