@@ -45,7 +45,8 @@ public class JavaGurus {
 				
 				if (gurus.add(element.ownText()) && !isRepeated) {					
 					System.out.println(element.ownText());
-					System.out.println(element.outerHtml());
+					System.out.println(element.attr("href"));
+//					From the link get details of gurus.
 					aboutThem.put(element.ownText(), null);
 				} else {					
 					isRepeated = true;
