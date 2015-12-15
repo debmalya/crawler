@@ -4,11 +4,11 @@
 package crawler;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 /**
  * @author debmalyajash
@@ -28,7 +28,10 @@ public class NetGurus {
 								args[0])
 						.timeout(0).get();
 				System.out.println(getHTML(document));
-				System.out.println(getText(document));
+				List<String> lines = getTextLineByLine(document);
+				for (String eachline : lines) {
+					System.out.println(eachline);
+				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -53,6 +56,32 @@ public class NetGurus {
 	 */
 	public static String getText(Document document) {
 		return document.text();
+	}
+	
+	/**
+	 * 
+	 * @param document retrieved from the passed URL.
+	 * @return get only text and return them maximum 80 characters in each line.
+	 */
+	public static List<String> getTextLineByLine(Document document) {
+		List<String> textList = new ArrayList<>();
+		String[] split = document.text().split(" ");
+		int count = 0;
+		StringBuilder eachLine = new StringBuilder();
+		for (String each:split) {
+			
+			if (count + each.length() < 80) {
+				eachLine.append(" ");
+				eachLine.append(each);
+				
+			} else {
+				textList.add(eachLine.toString());
+				eachLine.delete(0, eachLine.length());
+				count = 0;
+			}
+			count += each.length();
+		}
+		return textList;
 	}
 
 }
