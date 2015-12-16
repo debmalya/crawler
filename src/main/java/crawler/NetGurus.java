@@ -9,6 +9,8 @@ import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 /**
  * @author debmalyajash
@@ -32,6 +34,7 @@ public class NetGurus {
 				for (String eachline : lines) {
 					System.out.println(eachline);
 				}
+				getAllLinks(document);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -82,6 +85,17 @@ public class NetGurus {
 			count += each.length();
 		}
 		return textList;
+	}
+	
+	/**
+	 * Print all the links of the documents.
+	 * @param document
+	 */
+	public static void getAllLinks(Document document) {
+		Elements elements = document.getElementsByTag("a");
+		for (Element element : elements) {
+			System.out.println(element.text()+" " + element.html());
+		}
 	}
 
 }
