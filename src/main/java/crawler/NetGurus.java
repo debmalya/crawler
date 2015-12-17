@@ -25,6 +25,9 @@ public class NetGurus {
 		
 		if (args.length > 0 ) {
 			try {
+				if (!args[0].startsWith("http")) {
+					args[0] = "http://"+args[0];
+				}
 				Document document = Jsoup
 						.connect(
 								args[0])
