@@ -38,6 +38,8 @@ public class NetGurus {
 					System.out.println(eachline);
 				}
 				getAllLinks(document);
+				
+				getAllIds(document);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -99,6 +101,21 @@ public class NetGurus {
 		for (Element element : elements) {
 			System.out.println(element.text()+" " + element.html());
 		}
+	}
+	
+	
+	/**
+	 * Return all the ID s in a document.
+	 * @param document to be searched.
+	 * @return all ID s from the document.
+	 */
+	public static List<String> getAllIds(Document document) {
+		List<String> idList = new ArrayList<String>();
+		Elements idElements = document.getElementsByAttribute("id");
+		for (Element each:idElements) {
+			idList.add(each.id());			
+		}
+		return idList;
 	}
 
 }
