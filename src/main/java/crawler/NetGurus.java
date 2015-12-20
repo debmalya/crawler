@@ -113,7 +113,8 @@ public class NetGurus {
 		List<String> idList = new ArrayList<String>();
 		Elements idElements = document.getElementsByAttribute("id");
 		for (Element each:idElements) {
-			idList.add(each.id());			
+			idList.add(each.id());		
+			System.out.println(each.text());
 		}
 		return idList;
 	}
