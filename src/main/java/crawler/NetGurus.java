@@ -32,11 +32,11 @@ public class NetGurus {
 						.connect(
 								args[0])
 						.timeout(0).get();
-				System.out.println(getHTML(document));
-//				List<String> lines = getTextLineByLine(document);
-//				for (String eachline : lines) {
-//					System.out.println(eachline);
-//				}
+//				System.out.println(getHTML(document));
+				List<String> lines = getTextLineByLine(document);
+				for (String eachline : lines) {
+					System.out.println(eachline);
+				}
 				getAllLinks(document);
 				
 //				getAllIds(document);
