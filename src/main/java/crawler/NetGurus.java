@@ -39,7 +39,7 @@ public class NetGurus {
 				}
 				getAllLinks(document);
 				
-//				getAllIds(document);
+				getAllIds(document);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
