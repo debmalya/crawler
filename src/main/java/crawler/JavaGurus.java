@@ -44,7 +44,7 @@ public class JavaGurus {
 			for (Element element : elements) {
 				
 				if (gurus.add(element.ownText()) && !isRepeated) {					
-					System.out.println(element.ownText());
+//					System.out.println(element.ownText());
 //					System.out.println(element.attr("href"));
 //					System.out.println(document.getElementsContainingOwnText(element.attr("href")));
 //					From the link get details of gurus.
@@ -57,6 +57,7 @@ public class JavaGurus {
 //					Repeated - here will come the details of guru.
 //					Get the details.
 //					System.out.println(element.getElementsByAttribute("href"));
+					System.out.println(element.ownText()+ " " + element.nextSibling());
 				}
 			}
 		} catch (IOException e) {
