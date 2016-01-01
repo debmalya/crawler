@@ -47,7 +47,7 @@ public class JavaGurus {
 					aboutThem.put(element.ownText(), null);
 				} else {					
 					isRepeated = true;
-					System.out.println(element.ownText()+ " " + element.nextSibling());
+					System.out.println(element.ownText()+ "  -> " + element.nextSibling());
 				}
 			}
 		} catch (IOException e) {
